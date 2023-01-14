@@ -10,8 +10,9 @@ services:
     links:
       - serverdb
   serverdb:
-    image: mysql:5.7.37
+    image: mariadb:10.2
     container_name: serverdb
+    restart: on-failure
     volumes:
       - ./database/mysql:/var/lib/mysql
     environment:
