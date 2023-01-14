@@ -5,6 +5,8 @@ services:
     container_name: php8-apache2
     volumes:
       - ./source:/var/www/html
+      - ./config/vhosts.conf:/etc/apache2/sites-enabled/000-default.conf
+      - ./config/docker-web.ini:/usr/local/etc/php/conf.d//docker-php-ext-sodium.ini
     ports:
       - "80:80"
     links:
